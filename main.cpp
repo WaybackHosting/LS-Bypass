@@ -8,6 +8,7 @@ void Main() {
 	Memcury::VEHHook::Init();
 	void* Func = Memcury::Scanner::FindStringRef(L"Reason for Showing/Hiding LoadingScreen is unknown!").ScanFor({ 48, 89 }, false).GetAs<void*>();
 	Memcury::VEHHook::AddHook(Func, Hook);
+	Memcury::VEHHook::ToggleHook(Func);
 
 	while (true)
 	{
